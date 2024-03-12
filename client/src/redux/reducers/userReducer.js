@@ -73,20 +73,20 @@ const authSlice = createSlice({
     [changePasswordUser.rejected]: (state, action) => {
       state.loading = true;
     },
-    [loggedUser.pending]:(state, action)=>{
-      state.loading = true;
-    },
-    [loggedUser.fulfilled]:(state, { payload: { error, msg}})=>{
-      state.loading = false;
-      if (error) {
-        state.error = error;
-      } else {
-        state.msg = msg;
-      }
-    },
-    [loggedUser.rejected]: (state, action) => {
-      state.loading = true;
-    }
+    // [loggedUser.pending]:(state, action)=>{
+    //   state.loading = true;
+    // },
+    // [loggedUser.fulfilled]:(state, { payload: { error, msg}})=>{
+    //   state.loading = false;
+    //   if (error) {
+    //     state.error = error;
+    //   } else {
+    //     state.msg = msg;
+    //   }
+    // },
+    // [loggedUser.rejected]: (state, action) => {
+    //   state.loading = true;
+    // }
   },
 });
 

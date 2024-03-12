@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SEARCH_REQUEST, SEARCH_SUCCESS, SEARCH_FAILURE } from '../constant/constant';
+import { SEARCH_REQUEST, SEARCH_SUCCESS, SEARCH_FAILURE } from '../constants/constant';
 
 export const fetchSearchResults = () => {
     return async (dispatch) => {

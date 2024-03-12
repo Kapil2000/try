@@ -1,10 +1,10 @@
 import React from 'react'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './supplylogin.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Cookies from 'js-cookie';
-import { login,clearErrors } from '../../../REDUX/Actions/supplierAction';
+import { login,clearErrors } from '../../../redux/actions/supplierAction';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

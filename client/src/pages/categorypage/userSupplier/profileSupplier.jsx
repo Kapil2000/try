@@ -7,7 +7,7 @@ import Footer from '../../../components/homepage/footer/footer'
 import Cookies from 'js-cookie';
 // import { useNavigate } from 'react-router-dom'; 
 
-import { logout } from '../../../REDUX/Actions/supplierAction'
+import { logout } from '../../../redux/actions/supplierAction'
 import { useNavigate } from 'react-router-dom'
 // import Cookies from 'js-cookie';
 // import { useDispatch } from 'react-redux'

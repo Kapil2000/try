@@ -12,7 +12,7 @@ export const signUpUser = createAsyncThunk(SIGN_UP_USER, async (body) => {
     method: "post",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer${token}`,
+      // Authorization: `Bearer${token}`,
     },
     body: JSON.stringify(body),
   });
@@ -50,8 +50,8 @@ export const changePasswordUser = createAsyncThunk(
 );
 
 // logged user
-export const loggedUser = createAsyncThunk(LOGGED_USER, async () => {
-  let data = await fetch("http://localhost:8000/api/auth/logged-user");
-  data = await data.json();
-  Show_data(data);
-});
+// export const loggedUser = createAsyncThunk(LOGGED_USER, async () => {
+//   let data = await fetch("http://localhost:8000/api/auth/logged-user");
+//   data = await data.json();
+//   Show_data(data);
+// });

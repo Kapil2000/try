@@ -1,8 +1,6 @@
 import { combineReducers } from "redux";
-// import { reducer } from "./reducer";
-import authSlice from "../authSlice";
 import authSlice from "./userReducer";
-import { reducer01 } from "./supplierReducer";
+import { reduce01 } from "./supplierReducer";
 import { contactReducer } from "./contactReducer";
 import { getintouchReducer } from "./getintouchReducer";
 import { fetchReducer } from "./fetchcardReducer";
@@ -18,7 +16,7 @@ const rootReducer = combineReducers({
   reducer: {
     user: authSlice,
   },
-  reducer: reducer01,
+  reducer: reduce01,
 });
 
 export default rootReducer;

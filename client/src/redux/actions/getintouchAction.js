@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_IN_TOUCH_REQUEST, GET_IN_TOUCH_SUCCESS, GET_IN_TOUCH_FAILURE } from '../constant/constant'
+import { GET_IN_TOUCH_REQUEST, GET_IN_TOUCH_SUCCESS, GET_IN_TOUCH_FAILURE } from '../constants/constant'
 
 // export const SET_GET_IN_TOUCH = 'SET_GET_IN_TOUCH';
 

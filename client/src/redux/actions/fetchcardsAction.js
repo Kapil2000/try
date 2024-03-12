@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_REQUEST, FETCH_SUCCESS, FETCH_FAILURE } from "../constant/constant";
+import { FETCH_REQUEST, FETCH_SUCCESS, FETCH_FAILURE } from "../constants/constant";
 
 export const setFetch = (id) => {
     return async (dispatch) => {

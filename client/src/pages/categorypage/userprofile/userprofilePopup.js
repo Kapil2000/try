@@ -57,9 +57,9 @@ function UserProfilePopup() {
     setNotOpen(!notOpen);
   };
   //fetch data  by Api
-  async function Fetch_api() {
-    dispatch(loggedUser());
-}
+//   async function Fetch_api() {
+//     dispatch(loggedUser());
+// }
 
   return (
     <div>

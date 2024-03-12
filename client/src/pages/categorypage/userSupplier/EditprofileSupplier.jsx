@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './editprofilesupplier.css'
 import { useDispatch } from 'react-redux';
 
-import { edit } from '../../../REDUX/Actions/supplierAction';
+import { edit } from '../../../redux/actions/supplierAction';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

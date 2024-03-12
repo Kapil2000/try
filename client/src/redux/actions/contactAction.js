@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CONTACT_REQUEST, CONTACT_SUCCESS, CONTACT_FAILURE } from '../constant/constant'
+import { CONTACT_REQUEST, CONTACT_SUCCESS, CONTACT_FAILURE } from '../constants/constant'
 // export const SET_CONTACT = 'SET_CONTACT';
 
 export const setContact = (name, email, phone, service, msg) => {

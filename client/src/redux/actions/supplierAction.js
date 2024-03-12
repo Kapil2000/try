@@ -11,7 +11,7 @@ import {
   LOGOUT_FAIL,
   LOGIN_REQUEST,
   CLEAR_ERRORS,
-} from "../Constant/constant";
+} from "../constants/constant";
 
 import axios from "axios";
 import Cookies from 'js-cookie';

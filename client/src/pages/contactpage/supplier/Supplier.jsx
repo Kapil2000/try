@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import './supplier.css'
 import { Link } from 'react-router-dom'
 import Contractor1 from '../popup/Contractor1';
-import { registerS } from '../../../REDUX/Actions/supplierAction';
+import { registerS } from '../../../redux/actions/supplierAction';
 import { useDispatch } from 'react-redux';
 
 import { ToastContainer, toast } from 'react-toastify';

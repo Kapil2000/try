@@ -17,10 +17,6 @@ const initialState = {
   error: null,
   success: false,
   data: null,
-
-  // isAuthenticated:true,
-  // user: action.payload,
-
   isAuthenticated: false,
   // user: null,
   token: null,
