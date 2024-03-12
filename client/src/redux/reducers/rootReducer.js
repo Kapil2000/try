@@ -13,7 +13,8 @@ const rootReducer = combineReducers({
   fetchReducer,
   likeReducer,
   searchReducer,
-  reducer: {
+
+  reducer1: {
     user: authSlice,
   },
   reducer: reduce01,

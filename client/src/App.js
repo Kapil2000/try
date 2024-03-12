@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import Home from './pages/home page/home.jsx';
 import Suppliers from './components/homepage/explore/suppliers';
 import Signup from './pages/contactpage/signup/Signup.jsx';
@@ -20,11 +20,36 @@ import Supplylogin from './pages/contactpage/supplierlogin/Supplylogin.jsx';
 import ProfileSupplier from './pages/categorypage/userSupplier/profileSupplier.jsx';
 // import Button from './components/category/POPUP copy/Button.jsx';
 
+import Cookies from 'js-cookie';
+import { Navigate } from 'react-router-dom'; 
+
+
+
+
 function App() {
+  // const navigate=useNavigate('')
+
+  const Protect =({children})=>{
+    if (!Cookies.get('token')) {
+      console.log(Cookies.get('token'));
+      return < Navigate to='/'/>
+      
+     
+     
+  }
+  return children;
+
+  }
+ 
+    
+
   return (
     <div>
       <Router>
         <Routes>
+
+
+
           <Route path="/" element={<Home />} />
           <Route path="/suppliers" element={<Suppliers />} />
           <Route path="/category" element={<Upcategary />} />
@@ -34,7 +59,7 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/aflogged" element={<AfLogged />} />
           {/* <Route path="/button" element={<Button />} /> */}
-          <Route path="/profilesupplier" element={<ProfileSupplier />} />
+          <Route path="/profilesupplier" element={<Protect><ProfileSupplier /></Protect>} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/read" element={<Read />} />
           <Route path="/read1" element={<Read1 />} />

@@ -12,10 +12,11 @@ function RegisterationForm() {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {
-    console.log(email, userName, password);
-    console.log("Registered Successfully")
+  const handleSubmit = () => {    
     dispatch(signUpUser({ email, userName, password }));
+    // console.log(email, userName, password);
+    console.log("Registered Successfully");
+    // console.log(navigator.cookieEnabled);
   };
 
   return (

@@ -5,16 +5,20 @@ import { useState } from "react";
 import { useAuth } from "../../../store/auth";
 import { signInUser } from "../../../redux/actions/userAction";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Login() {
-  const [username, setUsername] = useState('');
+  const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   // const storeTokenInLS = useAuth();
+  // const data  = useSelector(state=>state)
+  // console.log(data)
 
   const handleSubmit = () => {
     console.log("Login Successfully")
-    dispatch(signInUser({ username, password }));
+    // console.log(userName)
+    dispatch(signInUser({ userName, password }));
   };
   return (
     <>
@@ -47,7 +51,7 @@ function Login() {
                 <input
                   type="text"
                   placeholder="Enter your User name"
-                  onChange={(e) => setUsername(e.target.value)}
+                  onChange={(e) => setUserName(e.target.value)}
                 />
               </div>
 

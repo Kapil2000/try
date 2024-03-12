@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { signUpUser, signInUser, changePasswordUser, loggedUser } from '../actions/userAction';
+import Cookies from "js-cookie";
 
 const initialState = {
   msg: "",
@@ -14,14 +15,14 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     addToken: (state, action) => {
-      state.token = localStorage.getItem("token");
+      state.token = Cookies.getItem("token");
     },
     addUser: (state, action) => {
-      state.user = localStorage.getItem("user");
+      state.user = Cookies.getItem("user");
     },
     logout: (state, action) => {
       state.token = null;
-      localStorage.clear();
+      Cookies.clear();
     },
   },
   extraReducers: {
@@ -37,9 +38,10 @@ const authSlice = createSlice({
         state.token = token;
         state.user = user;
 
-        localStorage.setItem("msg", msg);
-        localStorage.setItem("user", JSON.stringify(user));
-        localStorage.setItem("token", token);
+        Cookies.setItem("msg", msg);
+        Cookies.setItem("user", JSON.stringify(user));
+        // localStorage.setItem("token", token);
+        Cookies.set("jwt",token)
       }
     },
     [signInUser.rejected]: (state, action) => {
@@ -48,13 +50,15 @@ const authSlice = createSlice({
     [signUpUser.pending]: (state, action) => {
       state.loading = true;
     },
-    [signUpUser.fulfilled]: (state, { payload: { error, msg } }) => {
+    [signUpUser.fulfilled]: (state, { payload: { error, msg, token } }) => {
       state.loading = false;
       if (error) {
         state.error = error;
       } else {
         state.msg = msg;
+        Cookies.set("jwt",token)
       }
+      
     },
     [signUpUser.rejected]: (state, action) => {
       state.loading = true;
@@ -92,3 +96,4 @@ const authSlice = createSlice({
 
 export const { addToken, addUser, logout } = authSlice.actions;
 export default authSlice.reducer;
+

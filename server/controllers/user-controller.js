@@ -48,6 +48,7 @@ export const userRegister = async (req, res) => {
 export const userLogin = async (req, res) => {
   try {
     const { userName, password } = req.body;
+    console.log(req.body);
     if (userName && password) {
       const userExist = await User.findOne({ userName: userName });
       if (userExist != null) {
@@ -62,16 +63,17 @@ export const userLogin = async (req, res) => {
             { expiresIn: "1d" }
           );
           res
+            .cookie("jwt", token, {
+              httpOnly: true,
+              secure: true,
+            })
             .status(200)
             .send({
               status: "success",
               message: "Login success",
               token: token,
-            })
-            .cookie("jwt", token, {
-              httpOnly: true,
-              secure: true,
             });
+
           // localStorage.setItem("token",token)
 
           console.log(req.cookies.jwt);
