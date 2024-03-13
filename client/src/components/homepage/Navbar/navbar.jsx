@@ -196,14 +196,7 @@ const Navbar = () => {
             </ul>
           </div>
           {/* <input className='navbar-search' type='text' placeholder='search here'></input> */}
-          <button className="nav-btn">
-            <Link className="navbar-link-color-register" to="/login">
-              Register
-            </Link>
-          </button>
-          <Link className="footer-link-color" to="/profilesupplier">
-            <img className="navbar-profile" src={profile} alt=""></img>
-          </Link>
+
           {Cookies.get("token") ? (
             <Link className="footer-link-color" to="/profilesupplier">
               <img className="navbar-profile" src={profile} alt=""></img>
