@@ -6,6 +6,8 @@ import squarefeet from "./navbar images/21SQFT B 1.png";
 import profile from "./navbar images/Frame 6.png";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchResults } from "../../../redux/actions/searchAction";
+import Cookies from "js-cookie";
+
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
@@ -202,6 +204,17 @@ const Navbar = () => {
           <Link className="footer-link-color" to="/profilesupplier">
             <img className="navbar-profile" src={profile} alt=""></img>
           </Link>
+          {Cookies.get("token") ? (
+            <Link className="footer-link-color" to="/profilesupplier">
+              <img className="navbar-profile" src={profile} alt=""></img>
+            </Link>
+          ) : (
+            <button className="nav-btn">
+              <Link className="navbar-link-color-register" to="/login">
+                Register
+              </Link>
+            </button>
+          )}
         </div>
         <div
           className={`burger ${isBurgerOpen ? "open" : ""}`}

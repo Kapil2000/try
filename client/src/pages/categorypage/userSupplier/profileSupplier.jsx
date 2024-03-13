@@ -22,14 +22,14 @@ function ProfileSupplier() {
     // const dispatch=useDispatch()
     const navigate = useNavigate();
 
-    useEffect(() => {
+    // useEffect(() => {
         // const cookies = new Cookies();
         // const cookieValue = Cookies.get('token');
         // Check if user is authenticated, if not, redirect to homepage
-        if (!Cookies.get('token')) {
-            navigate('/');
-        }
-    }, [navigate]);   
+    //     if (!Cookies.get('token')) {
+    //         navigate('/');
+    //     }
+    // }, [navigate]);   
      // const cookies = new Cookies();
         // cookies.remove(logout);
     
