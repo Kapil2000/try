@@ -5,7 +5,6 @@
   font-family: 'Roboto';
 }
 
-
 .container-supplyl3 {
   /* height: 98vh; */
   width:100%;
@@ -36,8 +35,10 @@
   /* border-radius: 20px; */
 }
 .img-supplyl3 img {
-  width: 100%;
-  height: 100%;
+  width: 97%;
+  margin-left: 2%;
+  height: 98%;
+  margin-top: 2%;
   object-fit: cover;
   border-radius: 15px;
   font-family: 'Roboto';
@@ -177,16 +178,10 @@ padding: 4px 30px 4px 30px;
   border: none;
   background: 
   rgba(254, 204, 0, 1);
-  padding: 6px 100% 6px 100%;
-
+  padding: 8px 100% 8px 100%;
   border-radius: 15px;
-
-  
+ 
 }
-
-
-
-
 
 .Bhrl3{
   display: flex;
@@ -199,9 +194,9 @@ padding: 4px 30px 4px 30px;
   gap:10px;
 }
 
-#file-inputl3{
+/* #file-inputl3{ */
   /* display: none; */
-}
+/* } */
 
 .dragerl3{
   height: 130px;
@@ -564,4 +559,3 @@ padding: 4px 30px 4px 30px;
 
 
  }
-

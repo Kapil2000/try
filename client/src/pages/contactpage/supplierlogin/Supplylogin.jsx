@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-
+import { FaArrowLeft } from 'react-icons/fa';
 // import * as constant from '../../../REDUX/Constant/constant'
 import './supplylogin.css'
 import { Link, useNavigate, } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { login,clearErrors } from '../../../redux/actions/supplierAction';
+import { login, clearErrors } from '../../../redux/actions/supplierAction';
 // const history = useHistory();
 import Cookies from 'js-cookie';
 
@@ -15,48 +15,31 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
-
-
 function Supplylogin() {
 
-  const {  isAuthenticated,error,token} = useSelector(state => state.reducer);
-  
+  const { isAuthenticated, error, token } = useSelector(state => state.reducer);
 
   const tosatmessages = () => {
     toast.error("Error!", {
       position: 'top-center',
       theme: "colored",
     })
-
   }
-  // const cookies = new Cookies();
-
-
-
-
+  // const cookies = new Cookies()
 
   const navigate = useNavigate('')
-
-
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
- 
 
   const handleLogin = (e) => {
     e.preventDefault()
 
-    
-        // if(token){
-        //   saveTokenToCookie(token)
-        // }
-       
-    
-
+    // if(token){
+    //   saveTokenToCookie(token)
+    // }
 
     dispatch(login(name, password));
-    
   };
 
   useEffect(() => {
@@ -66,14 +49,14 @@ function Supplylogin() {
     }
 
     if (isAuthenticated) {
-      const saveTokenToCookie=(token)=>{
-        Cookies.set('token',token)
+      const saveTokenToCookie = (token) => {
+        Cookies.set('token', token)
       }
       saveTokenToCookie(token)
       navigate('/profilesupplier');
       // const cookieValue = Cookies.get('cookieName')
     }
-  }, [dispatch, error, isAuthenticated,token,  navigate]);  
+  }, [dispatch, error, isAuthenticated, token, navigate]);
 
   // dispatch, error,  isAuthenticated, navigate
 
@@ -87,40 +70,26 @@ function Supplylogin() {
   //     navigate('/profilesupplier');
   //   }
   // }, [dispatch, error, isAuthenticated, navigate]);
-  
-  
 
-  
+  //   useEffect(() => {
 
-  
+  //     if (getss.error) {
+  //       tosatmessages()
+  //       dispatch(getss.error);
+  //     }
 
+  //     if (getss.user === cookieValue) {
+  //       navigate('/profilesupplier');
+  //     }
 
-//   useEffect(() => {
-
-    
-   
-//     if (getss.error) {
-//       tosatmessages()
-//       dispatch(getss.error);
-//     }
-
-//     if (getss.user === cookieValue) {
-//       navigate('/profilesupplier');
-//     }
-  
-// }, 
-//   []);
+  // }, 
+  //   []);
 
 
   // Set a cookie
   // cookies.set('myCookie', 'cookieValue', { path: '/' });
   // Remove a cookie
   // cookies.remove('myCookie');  const cookieValue = cookies.get('myCookie');
-
-
-
-
-
 
   return (
     <>
@@ -135,13 +104,19 @@ function Supplylogin() {
         <div className='login-supplyl4'>
           <div className="pic210l4">
             <div></div>
-            <img src='https://s3-alpha-sig.figma.com/img/6cb7/38cb/9ca1ef94b1c68d847bf8f99ce05df810?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ycl1Vuy2KMq7-hMXzJrCE-3U1TavpfJtgXYwKAAFCpiEaVBkQxNQ7oJrkKmK56MAVmH2wHiEJKqiZqgUeh-F8ZMIgc~k7QZXhcjXDVM7oNDqe6~MtlW02Ly4D37MUFp2UxqOjmhvINxccnkdAYYpJV90IoAWjYhVRogwbMxUe96Vbt1mVUOzMRSkcw0MgDhtYzHFgadEqnwLIv6Wac36TFW36dYeSJEkG9Z9iKpoNVRIQ7edQ4XbBePD5IprBV2ytI4zbvKondOOWFUdHmcXPCzRdo~fVmvfX1aTtYQFJHlL1JPFnIfOqOgswlXxumqDbwdT3NDiazm2JiKanFpfhg__' alt=''></img>
+            <img src="/image/sq.jpg" alt="" />
+            {/* <img src='https://s3-alpha-sig.figma.com/img/6cb7/38cb/9ca1ef94b1c68d847bf8f99ce05df810?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ycl1Vuy2KMq7-hMXzJrCE-3U1TavpfJtgXYwKAAFCpiEaVBkQxNQ7oJrkKmK56MAVmH2wHiEJKqiZqgUeh-F8ZMIgc~k7QZXhcjXDVM7oNDqe6~MtlW02Ly4D37MUFp2UxqOjmhvINxccnkdAYYpJV90IoAWjYhVRogwbMxUe96Vbt1mVUOzMRSkcw0MgDhtYzHFgadEqnwLIv6Wac36TFW36dYeSJEkG9Z9iKpoNVRIQ7edQ4XbBePD5IprBV2ytI4zbvKondOOWFUdHmcXPCzRdo~fVmvfX1aTtYQFJHlL1JPFnIfOqOgswlXxumqDbwdT3NDiazm2JiKanFpfhg__' alt=''></img> */}
           </div>
 
           <div className="bwell4">
 
             {/* {data && data.map( )} */}
-
+            <div>
+              <Link to="/" className="back-button">
+                <FaArrowLeft className="arrow-icon" />
+                Back
+              </Link>
+            </div>
 
             <div className='wel-supplyl4'>Welcome!</div>
             <div className='div-supplyl4'>
@@ -280,10 +255,3 @@ export default Supplylogin
 // }
 
 // export default Supplylogin;
-
-
-
-
-
-
-

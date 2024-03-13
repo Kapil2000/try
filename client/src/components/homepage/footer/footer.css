@@ -37,7 +37,7 @@
 .footer-images-gap img{
     margin-left: 0.4rem;
 }
-.footer-buttons{
+.footer-buttons form{
     display: flex;
     flex-direction: column;
     margin-top: 10%;

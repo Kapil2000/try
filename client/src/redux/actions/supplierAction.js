@@ -14,7 +14,7 @@ import {
 } from "../constants/constant";
 
 import axios from "axios";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import { useEffect } from "react";
 
 // Supplier.jsx
@@ -69,15 +69,13 @@ export const login = (name, password) => async (dispatch) => {
       {
         name,
         password,
-       
-      },
+      }
       // {
       //   headers: {
       //     "Content-Type": "application/json",
       //     // Authorization: `Bearer ${token}`
       //   },
       // }
-      
     );
     const token = response.data.token;
 
@@ -89,18 +87,16 @@ export const login = (name, password) => async (dispatch) => {
     //   if(token){
     //     saveTokenToCookie(token)
     //   }
-    
+
     // },[])
 
     console.log(token);
 
-    
-
     dispatch({
       type: LOGIN_SUCCESS,
       payload: response.data,
-      
-      token:token,
+
+      token: token,
     });
     console.log(response);
   } catch (error) {
@@ -141,8 +137,8 @@ export const edit =
         { name, phone, service, address, city, state, desc, shortDesc, image },
         {
           headers: {
-            'Content-Type': 'application/json',
-            // Authorization: `Bearer ${token}`, 
+            "Content-Type": "application/json",
+            // Authorization: `Bearer ${token}`,
           },
         }
 
@@ -157,25 +153,20 @@ export const edit =
         // }
       );
 
-
       const token = response.data.token;
 
       // const saveTokenToCookie=(token)=>{
       //   Cookies.set('token',token)
       // }
-  
+
       // useEffect(()=>{
       //   if(token){
       //     saveTokenToCookie(token)
       //   }
-      
+
       // },[])
-  
+
       console.log(token);
-
-
-
-
 
       // console.log(response);
 

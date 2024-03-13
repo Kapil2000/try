@@ -1,12 +1,11 @@
 import React from "react";
 import "./login.css";
-import { Link} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useAuth } from "../../../store/auth";
 import { signInUser } from "../../../redux/actions/userAction";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-
+import { FaArrowLeft } from 'react-icons/fa';
 function Login() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
@@ -20,6 +19,11 @@ function Login() {
     // console.log(userName)
     dispatch(signInUser({ userName, password }));
   };
+  const navigate = useNavigate();
+  const handleBackButtonClick = () => {
+    // Redirect logic for back button
+    navigate('/'); // Specify your desired page URL here
+  };
   return (
     <>
       <div className="container-supplyl1">
@@ -31,11 +35,22 @@ function Login() {
           <div className="pic210l1">
             <div></div>
             <img
-              src="https://s3-alpha-sig.figma.com/img/6cb7/38cb/9ca1ef94b1c68d847bf8f99ce05df810?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ycl1Vuy2KMq7-hMXzJrCE-3U1TavpfJtgXYwKAAFCpiEaVBkQxNQ7oJrkKmK56MAVmH2wHiEJKqiZqgUeh-F8ZMIgc~k7QZXhcjXDVM7oNDqe6~MtlW02Ly4D37MUFp2UxqOjmhvINxccnkdAYYpJV90IoAWjYhVRogwbMxUe96Vbt1mVUOzMRSkcw0MgDhtYzHFgadEqnwLIv6Wac36TFW36dYeSJEkG9Z9iKpoNVRIQ7edQ4XbBePD5IprBV2ytI4zbvKondOOWFUdHmcXPCzRdo~fVmvfX1aTtYQFJHlL1JPFnIfOqOgswlXxumqDbwdT3NDiazm2JiKanFpfhg__"
+              src="/image/sq.jpg" // change 
+              // src="https://s3-alpha-sig.figma.com/img/6cb7/38cb/9ca1ef94b1c68d847bf8f99ce05df810?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ycl1Vuy2KMq7-hMXzJrCE-3U1TavpfJtgXYwKAAFCpiEaVBkQxNQ7oJrkKmK56MAVmH2wHiEJKqiZqgUeh-F8ZMIgc~k7QZXhcjXDVM7oNDqe6~MtlW02Ly4D37MUFp2UxqOjmhvINxccnkdAYYpJV90IoAWjYhVRogwbMxUe96Vbt1mVUOzMRSkcw0MgDhtYzHFgadEqnwLIv6Wac36TFW36dYeSJEkG9Z9iKpoNVRIQ7edQ4XbBePD5IprBV2ytI4zbvKondOOWFUdHmcXPCzRdo~fVmvfX1aTtYQFJHlL1JPFnIfOqOgswlXxumqDbwdT3NDiazm2JiKanFpfhg__"
               alt=""
             ></img>
           </div>
+
+          {/* <div> */}
+          {/* <button className="back-button" onClick={handleBackButtonClick}>Go Back</button> */}
+          {/* </div> */}
           <form onSubmit={handleSubmit} className="bwell1">
+            <div>
+              <Link to="/" className="back-button">
+                <FaArrowLeft className="arrow-icon" />
+                Back
+              </Link>
+            </div>
             <div className="wel-supplyl1">Welcome!</div>
             <div className="div-supplyl1">
               <Link to="/login" className="user1l1">

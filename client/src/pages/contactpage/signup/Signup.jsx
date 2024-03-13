@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpUser } from "../../../redux/actions/userAction";
-
+import { FaArrowLeft } from 'react-icons/fa';
 function RegisterationForm() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ function RegisterationForm() {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {    
+  const handleSubmit = () => {
     dispatch(signUpUser({ email, userName, password }));
     // console.log(email, userName, password);
     console.log("Registered Successfully");
@@ -26,6 +26,12 @@ function RegisterationForm() {
           {/* <img src='/image/div2.jpg' alt='img' /> */}
           <img src="/image/div1.jpg" alt="img" />
         </div>
+
+
+
+
+
+
         <form onSubmit={handleSubmit} className="login-supplyl2">
           <div className="pic210l2">
             <div></div>
@@ -33,6 +39,12 @@ function RegisterationForm() {
               src="/image/sq.jpg"
               alt=""
             ></img>
+          </div>
+          <div>
+            <Link to="/" className="back-button">
+              <FaArrowLeft className="arrow-icon" />
+              Back
+            </Link>
           </div>
           <div className="bwell2">
             <div className="wel-supplyl2">Welcome!</div>

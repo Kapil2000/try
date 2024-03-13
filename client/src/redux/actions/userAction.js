@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 // import Cookies from "js-cookie";
+// import axios from "axios";
 
 import {
   SIGN_UP_USER,
@@ -59,6 +60,7 @@ export const changePasswordUser = createAsyncThunk(
         method: "post",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer${Cookies}`,
         },
         body: JSON.stringify(body),
       }
