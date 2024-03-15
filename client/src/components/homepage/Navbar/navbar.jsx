@@ -7,6 +7,7 @@ import profile from "./navbar images/Frame 6.png";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchResults } from "../../../redux/actions/searchAction";
 import Cookies from "js-cookie";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,6 +21,15 @@ const Navbar = () => {
   const menuRef = useRef(null);
   const resultBoxRef = useRef(null);
   // const [name,setName]=useState('')
+  const { isAuthenticated, user } = useAuth0();
+
+
+  useEffect(() =>{
+    if(!Cookies.getItem('jwt')){
+      navigate('/')
+    }
+  },[]);
+
   useEffect(() => {
     if (searchQuery) {
       setShowResults(true);
@@ -222,3 +232,5 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+
+

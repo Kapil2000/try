@@ -17,7 +17,7 @@
 }
 .squarefeet{
     width: 180px;
-    height: 50px;
+    height: 55px;
 }
 .navbar{
     scroll-behavior: smooth;
@@ -50,7 +50,7 @@
     top: 2.2%;
     /* opacity: 1; */
     z-index: 1;
-    width: 21%;
+    width: 27%;
     margin-top: 4px;
     border-radius: 5px;
 }
@@ -120,7 +120,7 @@ background:#e7e9eb;
 }
 .result-box{
     background-color: white;
-   /*  scroll: down; */
+   /*  scroll: down; */
     scroll-behavior: smooth;
     /* width: 190px; */
 }
@@ -153,7 +153,7 @@ background:#e7e9eb;
     display: flex;
     gap: 2rem;
     width: 60%;
-    margin-left: 6%;
+    margin-left: 16%;
     margin-top: 12px;
 }
 
@@ -341,9 +341,7 @@ background:#e7e9eb;
         padding: 10px;
         box-sizing: border-box;
     }
-    .h-nav-resp{
-        /* height: 20px; */
-    }
+    
     .v-class-resp{
         opacity: 0;
         color: black;
@@ -459,9 +457,7 @@ background:#e7e9eb;
         padding: 10px;
         box-sizing: border-box;
     }
-    .h-nav-resp{
-        /* height: 20px; */
-    }
+    
     .v-class-resp{
         opacity: 0;
         color: black;

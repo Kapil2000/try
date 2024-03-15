@@ -167,20 +167,26 @@ padding: 4px 30px 4px 30px;
 
 .registration1l3 {
   display: flex;
+  flex-direction: column;
   /* height: 40px; */
   margin-top: 20px;
-  width: 100%;
+  width: 42%;
   border: none;
   justify-content: space-between;
 }
 .registration1l3 button {
- 
+ /* width: 100%; */
   border: none;
   background: 
   rgba(254, 204, 0, 1);
   padding: 8px 100% 8px 100%;
   border-radius: 15px;
  
+}
+.dosulppyl3{
+  margin-top: 10%;
+  /* text-align: center; */
+  /* width: 220%; */
 }
 
 .Bhrl3{
@@ -194,9 +200,7 @@ padding: 4px 30px 4px 30px;
   gap:10px;
 }
 
-/* #file-inputl3{ */
-  /* display: none; */
-/* } */
+
 
 .dragerl3{
   height: 130px;
@@ -215,10 +219,6 @@ padding: 4px 30px 4px 30px;
   /* height: 25vh; */
   margin: 18px 0px 8px 15px;
 }
-
-
-
-
 
 .upload-inputl3{
   display: block;
@@ -288,11 +288,6 @@ padding: 4px 30px 4px 30px;
   flex:1; */
 
 }
-
-
-
-
-
 .dkrl3{
   color:rgba(254, 204, 0, 1) ;
   padding: 7px;
@@ -353,36 +348,32 @@ padding: 4px 30px 4px 30px;
           display: flex;
           /* height: 40px; */
           margin-top: 20px;
-          /* width: 100%; */
+          width: 100%;
           border: none;
           justify-content: space-between;
         }
 
         .registration1l3 button {
- 
           border: none;
           background: 
           rgba(254, 204, 0, 1);
           padding: 6px 20px 6px 20px;
-      
           border-radius: 15px;
-        
-          
+                 width: 100%;
         }
         /* .dosulppy{
           padding-top: 6px;
           font-size: small;
         } */
         .dosulppyl3{
+          margin-top: 5%;
+          text-align: center;
           padding-top: 6px;
           font-size: 10px;
         }
         .dkrl3{
           font-size: small;
         }
-
-
-
         .pn5l3 input,.pn4l3 input{
           width: 100%;
           outline: none;
@@ -426,13 +417,7 @@ padding: 4px 30px 4px 30px;
     .pn2l3 input::placeholder,      .pn1l3 input::placeholder{
       font-size: 10px;
     }
-
-
  }
-
-
-
-
  @media (min-width:200px) and (max-width:358px){
   .container-supplyl3 {
       /* height: 98vh; */
@@ -483,7 +468,7 @@ padding: 4px 30px 4px 30px;
           display: flex;
           /* height: 40px; */
           margin-top: 20px;
-          /* width: 100%; */
+          width: 100%;
           border: none;
           justify-content: space-between;
         }
@@ -494,7 +479,7 @@ padding: 4px 30px 4px 30px;
           background: 
           rgba(254, 204, 0, 1);
           padding: 6px 20px 6px 20px;
-      
+          width: 100%;
           border-radius: 15px;
         
           
@@ -504,6 +489,8 @@ padding: 4px 30px 4px 30px;
           font-size: small;
         } */
         .dosulppyl3{
+          text-align: center;
+          margin-top: 5%;
           padding-top: 6px;
           font-size: 10px;
         }

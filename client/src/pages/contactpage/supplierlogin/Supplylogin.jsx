@@ -103,6 +103,12 @@ function Supplylogin() {
         </div>
         <div className='login-supplyl4'>
           <div className="pic210l4">
+            <div>
+              <Link to="/" className="back-button">
+                <FaArrowLeft className="arrow-icon" />
+                Back
+              </Link>
+            </div>
             <div></div>
             <img src="/image/sq.jpg" alt="" />
             {/* <img src='https://s3-alpha-sig.figma.com/img/6cb7/38cb/9ca1ef94b1c68d847bf8f99ce05df810?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ycl1Vuy2KMq7-hMXzJrCE-3U1TavpfJtgXYwKAAFCpiEaVBkQxNQ7oJrkKmK56MAVmH2wHiEJKqiZqgUeh-F8ZMIgc~k7QZXhcjXDVM7oNDqe6~MtlW02Ly4D37MUFp2UxqOjmhvINxccnkdAYYpJV90IoAWjYhVRogwbMxUe96Vbt1mVUOzMRSkcw0MgDhtYzHFgadEqnwLIv6Wac36TFW36dYeSJEkG9Z9iKpoNVRIQ7edQ4XbBePD5IprBV2ytI4zbvKondOOWFUdHmcXPCzRdo~fVmvfX1aTtYQFJHlL1JPFnIfOqOgswlXxumqDbwdT3NDiazm2JiKanFpfhg__' alt=''></img> */}
@@ -111,27 +117,17 @@ function Supplylogin() {
           <div className="bwell4">
 
             {/* {data && data.map( )} */}
-            <div>
-              <Link to="/" className="back-button">
-                <FaArrowLeft className="arrow-icon" />
-                Back
-              </Link>
-            </div>
-
             <div className='wel-supplyl4'>Welcome!</div>
             <div className='div-supplyl4'>
-
               <div className='user1l4'>User</div>
               <div className='supply1l4'>Contractor/Supplier</div>
             </div>
-
             <form onSubmit={handleLogin}>
               <div className='info-supplyl4'>
                 <div className='user-logl4'>
                   <label>Name</label>
                   <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder='Enter you name of  your company' />
                 </div>
-
                 <div className='user-passl4'>
                   <label>Password</label>
                   <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder='Enter your password' />

@@ -12,7 +12,7 @@ function RegisterationForm() {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     dispatch(signUpUser({ email, userName, password }));
     // console.log(email, userName, password);
     console.log("Registered Successfully");
@@ -27,24 +27,19 @@ function RegisterationForm() {
           <img src="/image/div1.jpg" alt="img" />
         </div>
 
-
-
-
-
-
         <form onSubmit={handleSubmit} className="login-supplyl2">
           <div className="pic210l2">
+            <div>
+              <Link to="/" className="back-button">
+                <FaArrowLeft className="arrow-icon" />
+                Back
+              </Link>
+            </div>
             <div></div>
             <img
               src="/image/sq.jpg"
               alt=""
             ></img>
-          </div>
-          <div>
-            <Link to="/" className="back-button">
-              <FaArrowLeft className="arrow-icon" />
-              Back
-            </Link>
           </div>
           <div className="bwell2">
             <div className="wel-supplyl2">Welcome!</div>

@@ -6,10 +6,15 @@ import { GoHeart } from "react-icons/go";
 import { FaRegCheckSquare } from "react-icons/fa";
 import axios from 'axios';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector  } from 'react-redux';
 import { changePasswordUser} from '../../../redux/actions/userAction';
 import { logout } from '../../../redux/reducers/userReducer';
-import { loggedUser } from '../../../redux/actions/userAction';
+// import { loggedUser } from '../../../redux/actions/userAction';
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
+// import {userFetchRequest, userFetchSuccess, userFetchFailure} from '../../../redux/actions/userAction';
+import { fetchData } from '../../../redux/actions/userAction';
+
 
 function UserProfilePopup() {
   const [email, setEmail] = useState("");
@@ -17,13 +22,23 @@ function UserProfilePopup() {
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirm_password] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { data, loading, error } = useSelector(state => state);
+  
 
-  const handleSubmit = () => {
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
+
+
+  const handleSubmit = (e) => {
     dispatch(changePasswordUser({email,userName, password, confirm_password}));
-    console.log("Password Changed Successfully");
+    // console.log("Password Changed Successfully");
   };
 
   const handleLogout = async () => {
+    Cookies.remove('token',{path: '' })
+    navigate('/');
     dispatch(logout);
     console.log("Logout Successfully")
   };
@@ -39,7 +54,7 @@ function UserProfilePopup() {
         setNotOpen(false);
       }
     };
-
+ 
     document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
@@ -65,12 +80,14 @@ function UserProfilePopup() {
     <div>
       <button onClick={togglePopup}>User</button>
       {isOpen && (
-        <div className="modal" ref={modalRef}>
+        <div className="modal" ref={modalRef} key={item.id}>
           <div className="modal-content">
             <p><CgProfile /></p>
-            <p>${data[i].userName}</p>
+            {/* <p>${data[i].userName}</p> */}
+            <p>{item.name}</p>
           </div>
-          <div className='modalemail'>${data[i].email}</div>
+          {/* <div className='modalemail'>${data[i].email}</div> */}
+          <div className='modalemail'>{item.email}</div>
           <div className='modalprofile'>
             <p><FaRegEdit /></p>
             <button onClick={togglePopup1}>Edit Profile

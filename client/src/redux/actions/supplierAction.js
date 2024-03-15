@@ -34,19 +34,8 @@ export const registerS = (
       const response = await axios.post(
         "http://localhost:8000/api/auth/contractor-register",
         { name, phone, service, address, city, state, image, password }
-        //  {
-
-        //   headers: {
-        //       'Content-Type': 'application/json',
-        //     }
-
-        // //     // body: JSON.stringify(formData),
-
-        //  }
       );
-
       console.log(response);
-
       dispatch({
         type: REGISTER_SUCCESS,
         payload: response.data,

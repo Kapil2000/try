@@ -111,6 +111,12 @@ function Supplier() {
         </div>
         <div className="login-supplyl3">
           <div className="pic210l3">
+            <div>
+              <Link to="/" className="back-button">
+                <FaArrowLeft className="arrow-icon" />
+                Back
+              </Link>
+            </div>
             <div></div>
             <img
               src="/image/sq.jpg"
@@ -119,12 +125,12 @@ function Supplier() {
             ></img>
           </div>
           <form className="bwell3" onSubmit={(e) => handleSubmit}>
-            <div>
-              <Link to="/" className="back-button">
-                <FaArrowLeft className="arrow-icon" />
-                Back
-              </Link>
-            </div>
+
+
+
+
+
+
             <div className="wel-supplyl3">Welcome!</div>
             <div className="div-supplyl3">
               <Link to="/login" className="user1l3">

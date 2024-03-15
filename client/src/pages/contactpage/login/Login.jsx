@@ -2,6 +2,7 @@ import React from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+// import { useAuth } from "../../../store/auth";
 import { signInUser } from "../../../redux/actions/userAction";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -33,6 +34,12 @@ function Login() {
         </div>
         <div className="login-supplyl1">
           <div className="pic210l1">
+            <div>
+              <Link to="/" className="back-button">
+                <FaArrowLeft className="arrow-icon" />
+                Back
+              </Link>
+            </div>
             <div></div>
             <img
               src="/image/sq.jpg" // change 
@@ -45,12 +52,6 @@ function Login() {
           {/* <button className="back-button" onClick={handleBackButtonClick}>Go Back</button> */}
           {/* </div> */}
           <form onSubmit={handleSubmit} className="bwell1">
-            <div>
-              <Link to="/" className="back-button">
-                <FaArrowLeft className="arrow-icon" />
-                Back
-              </Link>
-            </div>
             <div className="wel-supplyl1">Welcome!</div>
             <div className="div-supplyl1">
               <Link to="/login" className="user1l1">
